@@ -10,15 +10,25 @@ img {
   width: 100%;
 }
 
+/* BASE STYLES */
 body {
-  margin: 3.5rem 1.5rem;
+  margin: 3.5rem 1.5rem 2rem;
   background: hsl(226, 43%, 10%);
   font-family: "Rubik", sans-serif;
   color: white;
 }
 
-/* HEADER */
+main {
+  margin-bottom: 5rem;
+}
 
+/* UTILITIES*/
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* HEADER */
 .dashboard__header {
   background: hsl(235, 46%, 20%);
   border-radius: 12px;
@@ -38,6 +48,8 @@ body {
     border-radius: 100%;
   }
 }
+
+/* HEADER NAVIGATION */
 .dashboard__nav {
   padding: 1.5rem;
 
@@ -63,7 +75,6 @@ body {
 }
 
 /* TYPOGRAPHY */
-
 h1 {
   font-size: 1.5rem;
   letter-spacing: 0.125px;
@@ -83,7 +94,6 @@ h2 {
 }
 
 /* CARD COMPONENTS */
-
 article:first-child {
   margin-top: 4rem;
 }
@@ -139,6 +149,7 @@ article:first-child {
   border-top-right-radius: 12px;
 }
 
+/* CARD COMPONENTS - Background & Icon Styling */
 .work::before {
   background-color: hsl(15, 100%, 70%);
   background-image: url(images/icon-work.svg);
@@ -172,9 +183,14 @@ article:first-child {
   background-position: right 16px top -17px;
 }
 
-/* UTILITIES*/
+/* FOOTER */
 
-.flex {
-  display: flex;
-  align-items: center;
+.attribution {
+  text-align: center;
+  font-size: 0.7rem;
+  color: hsl(235, 45%, 61%);
+
+  & a {
+    color: inherit;
+  }
 }
