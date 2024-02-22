@@ -88,7 +88,7 @@ article:first-child {
   margin-top: 4rem;
 }
 
-article {
+.dashboard__component {
   border-radius: 12px;
   padding: 1.8rem 1.5rem;
   margin-bottom: 4rem;
@@ -125,100 +125,51 @@ article {
   }
 }
 
-.work::before {
+.dashboard__component::before {
   content: "";
   z-index: -1;
   width: calc(100% - 3rem);
   height: 80px;
   position: absolute;
   transform: translate(-1.5rem, -68px);
-  background-color: hsl(15, 100%, 70%);
-  background-image: url(images/icon-work.svg);
-  background-size: contain;
+  background-size: 24%;
   background-repeat: no-repeat;
   background-position: right 16px top -10px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+}
+
+.work::before {
+  background-color: hsl(15, 100%, 70%);
+  background-image: url(images/icon-work.svg);
 }
 
 .play::before {
-  content: "";
-  z-index: -1;
-  width: calc(100% - 3rem);
-  height: 80px;
-  position: absolute;
-  transform: translate(-1.5rem, -68px);
   background-color: hsl(195, 74%, 62%);
   background-image: url(images/icon-play.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right 16px top -10px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
 }
 
 .study::before {
-  content: "";
-  z-index: -1;
-  width: calc(100% - 3rem);
-  height: 80px;
-  position: absolute;
-  transform: translate(-1.5rem, -68px);
   background-color: hsl(348, 100%, 68%);
   background-image: url(images/icon-study.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right 16px top -10px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
 }
 
 .exercise::before {
-  content: "";
-  z-index: -1;
-  width: calc(100% - 3rem);
-  height: 80px;
-  position: absolute;
-  transform: translate(-1.5rem, -68px);
   background-color: hsl(145, 58%, 55%);
   background-image: url(images/icon-exercise.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right 16px top -10px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  background-position: right 16px top 0;
 }
 
 .social::before {
-  content: "";
-  z-index: -1;
-  width: calc(100% - 3rem);
-  height: 80px;
-  position: absolute;
-  transform: translate(-1.5rem, -68px);
   background-color: hsl(264, 64%, 52%);
   background-image: url(images/icon-social.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right 16px top -10px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  background-position: right 16px top -16px;
 }
 
 .self-care::before {
-  content: "";
-  z-index: -1;
-  width: calc(100% - 3rem);
-  height: 80px;
-  position: absolute;
-  transform: translate(-1.5rem, -68px);
   background-color: hsl(43, 84%, 65%);
   background-image: url(images/icon-self-care.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right 16px top -10px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  background-position: right 16px top -17px;
 }
 
 /* UTILITIES*/
