@@ -45,6 +45,7 @@ function clearDashboard(dashboard) {
 function createArticleElement(hobby, timeframeObj, timeframe) {
     const article = document.createElement('article');
     const timeLabel = getTimeLabel(timeframe);
+    article.classList.add("dashboard__component");
     article.classList.add(`${hobby.title.toLowerCase().split(' ').join('-')}`);
     article.innerHTML = `
         <header class="flex">
