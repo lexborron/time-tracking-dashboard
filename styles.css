@@ -68,6 +68,10 @@ main {
     border: none;
   }
 
+  & .active {
+    color: white;
+  }
+
   & button:hover {
     cursor: pointer;
     color: white;

@@ -11,8 +11,13 @@ fetch('data.json')
 // event handler setup
 const setupEventListeners = () => {
     const buttons = document.querySelectorAll('[data-timeframe]');
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+            buttons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+            button.classList.add("active");
             const timeframe = button.getAttribute('data-timeframe');
             renderDashboard(hobbyData, timeframe);
         });
