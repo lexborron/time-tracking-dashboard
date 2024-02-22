@@ -1,0 +1,229 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  margin: 3.5rem 1.5rem;
+  background: hsl(226, 43%, 10%);
+  font-family: "Rubik", sans-serif;
+  color: white;
+}
+
+/* HEADER */
+
+.dashboard__header {
+  background: hsl(235, 46%, 20%);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+
+  & div {
+    padding: 1.8rem;
+    background: hsl(246, 80%, 60%);
+    border-radius: 12px;
+    color: inherit;
+  }
+
+  & .profile-pic {
+    max-width: 4.2rem;
+    margin-right: 1.1rem;
+    border: 2.5px solid white;
+    border-radius: 100%;
+  }
+}
+.dashboard__nav {
+  padding: 1.5rem;
+
+  & ul {
+    list-style: none;
+    justify-content: center;
+    gap: 2.5em;
+  }
+
+  & button {
+    background: transparent;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    color: hsl(235, 45%, 61%);
+    border: none;
+  }
+
+  & button:hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.125px;
+  font-weight: 300;
+
+  & span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: hsl(236, 100%, 87%);
+  }
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* CARD COMPONENTS */
+
+article:first-child {
+  margin-top: 4rem;
+}
+
+article {
+  border-radius: 12px;
+  padding: 1.8rem 1.5rem;
+  margin-bottom: 4rem;
+  font-weight: 300;
+  background: hsl(235, 46%, 20%);
+
+  & div {
+    justify-content: space-between;
+  }
+
+  & header {
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  & .ellipsis {
+    width: 20px;
+    padding: 5px 0;
+  }
+
+  & .ellipsis:hover {
+    cursor: pointer;
+  }
+
+  & p {
+    font-size: 0.95rem;
+    color: hsl(236, 100%, 87%);
+  }
+
+  & .current-hours {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+.work::before {
+  content: "";
+  z-index: -1;
+  width: calc(100% - 3rem);
+  height: 80px;
+  position: absolute;
+  transform: translate(-1.5rem, -68px);
+  background-color: hsl(15, 100%, 70%);
+  background-image: url(images/icon-work.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16px top -10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.play::before {
+  content: "";
+  z-index: -1;
+  width: calc(100% - 3rem);
+  height: 80px;
+  position: absolute;
+  transform: translate(-1.5rem, -68px);
+  background-color: hsl(195, 74%, 62%);
+  background-image: url(images/icon-play.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16px top -10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.study::before {
+  content: "";
+  z-index: -1;
+  width: calc(100% - 3rem);
+  height: 80px;
+  position: absolute;
+  transform: translate(-1.5rem, -68px);
+  background-color: hsl(348, 100%, 68%);
+  background-image: url(images/icon-study.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16px top -10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.exercise::before {
+  content: "";
+  z-index: -1;
+  width: calc(100% - 3rem);
+  height: 80px;
+  position: absolute;
+  transform: translate(-1.5rem, -68px);
+  background-color: hsl(145, 58%, 55%);
+  background-image: url(images/icon-exercise.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16px top -10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.social::before {
+  content: "";
+  z-index: -1;
+  width: calc(100% - 3rem);
+  height: 80px;
+  position: absolute;
+  transform: translate(-1.5rem, -68px);
+  background-color: hsl(264, 64%, 52%);
+  background-image: url(images/icon-social.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16px top -10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.self-care::before {
+  content: "";
+  z-index: -1;
+  width: calc(100% - 3rem);
+  height: 80px;
+  position: absolute;
+  transform: translate(-1.5rem, -68px);
+  background-color: hsl(43, 84%, 65%);
+  background-image: url(images/icon-self-care.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 16px top -10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* UTILITIES*/
+
+.flex {
+  display: flex;
+  align-items: center;
+}
