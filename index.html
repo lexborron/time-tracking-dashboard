@@ -17,27 +17,27 @@
 </head>
 
 <body>
-  <header class="dashboard__header">
-    <div class="flex">
-      <img class="profile-pic" src="images/image-jeremy.png" alt="Profile picture of Jeremy">
-      <h1>
-        <span>Report for</span>
-        Jeremy Robson
-      </h1>
-    </div>
-    <nav class="dashboard__nav">
-      <ul class="flex">
-        <li><button class="active" id="daily" data-timeframe="daily">Daily</button></li>
-        <li><button id="weekly" data-timeframe="weekly">Weekly</button></li>
-        <li><button id="monthly" data-timeframe="monthly">Monthly</button></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="dashboard">
+    <header class="dashboard__header">
+      <div>
+        <img class="dashboard__pic" src="images/image-jeremy.png" alt="Profile picture of Jeremy">
+        <h1 class="dashboard__user">
+          <span>Report for</span>
+          Jeremy Robson
+        </h1>
+      </div>
+      <nav class="dashboard__nav">
+        <ul>
+          <li><button class="active" id="daily" data-timeframe="daily">Daily</button></li>
+          <li><button id="weekly" data-timeframe="weekly">Weekly</button></li>
+          <li><button id="monthly" data-timeframe="monthly">Monthly</button></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <div id="dashboard">
-    </div>
-  </main>
+    <main class="dashboard__activities-grid" id="activities">
+    </main>
+  </div>
 
   <footer class="attribution">
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
