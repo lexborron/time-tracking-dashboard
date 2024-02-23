@@ -18,12 +18,14 @@ body {
   color: white;
 }
 
-main {
-  margin-bottom: 5rem;
+/* GRID LAYOUT */
+.dashboard__activities-grid {
+  display: grid;
 }
 
 /* UTILITIES*/
 .flex {
+  /* used in script.js */
   display: flex;
   align-items: center;
 }
@@ -32,16 +34,17 @@ main {
 .dashboard__header {
   background: hsl(235, 46%, 20%);
   border-radius: 12px;
-  margin-bottom: 1rem;
 
   & div {
+    display: flex;
+    align-items: center;
     padding: 1.8rem;
     background: hsl(246, 80%, 60%);
     border-radius: 12px;
     color: inherit;
   }
 
-  & .profile-pic {
+  & .dashboard__pic {
     max-width: 4.2rem;
     margin-right: 1.1rem;
     border: 2.5px solid white;
@@ -54,6 +57,8 @@ main {
   padding: 1.5rem;
 
   & ul {
+    display: flex;
+    align-items: center;
     list-style: none;
     justify-content: center;
     gap: 2.5em;
@@ -79,7 +84,7 @@ main {
 }
 
 /* TYPOGRAPHY */
-h1 {
+.dashboard__user {
   font-size: 1.5rem;
   letter-spacing: 0.125px;
   font-weight: 300;
@@ -92,22 +97,20 @@ h1 {
   }
 }
 
-h2 {
+.dashboard__activity-title {
   font-size: 1.1rem;
   font-weight: 500;
 }
 
 /* CARD COMPONENTS */
-article:first-child {
-  margin-top: 4rem;
-}
-
 .dashboard__component {
+  width: 100%;
   border-radius: 12px;
   padding: 1.8rem 1.5rem;
   margin-bottom: 4rem;
   font-weight: 300;
   background: hsl(235, 46%, 20%);
+  position: relative;
 
   & div {
     justify-content: space-between;
@@ -115,7 +118,6 @@ article:first-child {
 
   & header {
     justify-content: space-between;
-    position: relative;
     margin-bottom: 0.5rem;
   }
 
@@ -139,13 +141,22 @@ article:first-child {
   }
 }
 
+/* ensures correct space above first component and under last component */
+.dashboard__component:first-child {
+  margin-top: 4rem;
+}
+
+.dashboard__component:last-child {
+  margin-bottom: 0;
+}
+
 .dashboard__component::before {
   content: "";
   z-index: -1;
-  width: calc(100% - 3rem);
+  width: inherit;
+  transform: translate(-1.51rem, -68px);
   height: 80px;
   position: absolute;
-  transform: translate(-1.5rem, -68px);
   background-size: 24%;
   background-repeat: no-repeat;
   background-position: right 16px top -10px;
@@ -188,7 +199,6 @@ article:first-child {
 }
 
 /* FOOTER */
-
 .attribution {
   text-align: center;
   font-size: 0.7rem;
@@ -197,4 +207,43 @@ article:first-child {
   & a {
     color: inherit;
   }
+}
+
+@media screen and (min-width: 600px) {
+  /* GRID LAYOUT */
+  .dashboard__activities-grid {
+    display: grid;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dashboard__component {
+    margin-top: 4rem;
+    margin-bottom: 0;
+
+    & header {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .dashboard__component:first-child,
+  .dashboard__component:last-child {
+    margin-top: 4rem;
+  }
+
+  .dashboard__component::before {
+    width: inherit;
+  }
+
+  .current-hours {
+    margin-bottom: 0.8rem;
+  }
+
+  .times-tracked {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media screen and (min-width: 900px) {
 }
