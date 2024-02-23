@@ -17,28 +17,29 @@
 </head>
 
 <body>
-  <div class="dashboard">
-    <header class="dashboard__header">
-      <div>
-        <img class="dashboard__pic" src="images/image-jeremy.png" alt="Profile picture of Jeremy">
-        <h1 class="dashboard__user">
-          <span>Report for</span>
-          Jeremy Robson
-        </h1>
-      </div>
-      <nav class="dashboard__nav">
-        <ul>
-          <li><button class="active" id="daily" data-timeframe="daily">Daily</button></li>
-          <li><button id="weekly" data-timeframe="weekly">Weekly</button></li>
-          <li><button id="monthly" data-timeframe="monthly">Monthly</button></li>
-        </ul>
-      </nav>
-    </header>
+  <div class="container">
+    <div class="dashboard-grid">
+      <header class="dashboard__header">
+        <div>
+          <img class="dashboard__pic" src="images/image-jeremy.png" alt="Profile picture of Jeremy">
+          <h1 class="dashboard__user">
+            <span>Report for</span>
+            Jeremy Robson
+          </h1>
+        </div>
+        <nav class="dashboard__nav">
+          <ul>
+            <li><button class="active" id="daily" data-timeframe="daily">Daily</button></li>
+            <li><button id="weekly" data-timeframe="weekly">Weekly</button></li>
+            <li><button id="monthly" data-timeframe="monthly">Monthly</button></li>
+          </ul>
+        </nav>
+      </header>
 
-    <main class="dashboard__activities-grid" id="activities">
-    </main>
+      <main class="dashboard__activities-grid" id="activities">
+      </main>
+    </div>
   </div>
-
   <footer class="attribution">
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://github.com/lexborron">Lexie Borron</a>.</p>

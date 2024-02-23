@@ -12,6 +12,7 @@ img {
 
 /* BASE STYLES */
 body {
+  height: 100%;
   margin: 3.5rem 1.5rem 2rem;
   background: hsl(226, 43%, 10%);
   font-family: "Rubik", sans-serif;
@@ -122,12 +123,14 @@ body {
   }
 
   & .ellipsis {
-    width: 20px;
-    padding: 5px 0;
+    z-index: 100;
+    width: auto;
+    fill: #bbc0ff;
   }
 
   & .ellipsis:hover {
     cursor: pointer;
+    fill: white;
   }
 
   & p {
@@ -154,14 +157,19 @@ body {
   content: "";
   z-index: -1;
   width: inherit;
-  transform: translate(-1.51rem, -68px);
+  transform: translate(-1.519rem, -68px);
   height: 80px;
   position: absolute;
-  background-size: 24%;
+  background-size: 75px;
   background-repeat: no-repeat;
   background-position: right 16px top -10px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+}
+
+.dashboard__component:hover {
+  cursor: pointer;
+  background: hsl(235, 45%, 61%);
 }
 
 /* CARD COMPONENTS - Background & Icon Styling */
@@ -210,7 +218,10 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-  /* GRID LAYOUT */
+  body {
+    margin-bottom: 0;
+  }
+
   .dashboard__activities-grid {
     display: grid;
     column-gap: 1.5rem;
@@ -243,7 +254,86 @@ body {
     flex-direction: column;
     align-items: start;
   }
+
+  .attribution {
+    margin: 6rem 0 1rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
+  body {
+    margin: 14rem 0 0;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dashboard-grid {
+    max-width: 77%;
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: minmax(13rem, 17.5vw) 56vw;
+  }
+
+  .dashboard__header {
+    & div {
+      flex-direction: column;
+      align-items: start;
+      padding-bottom: 5rem;
+    }
+
+    & .dashboard__pic {
+      max-width: 5rem;
+      margin-right: 0;
+      margin-bottom: 2.2rem;
+    }
+  }
+
+  .dashboard__user {
+    font-size: 2.5rem;
+  }
+
+  .dashboard__nav {
+    padding: 1.6rem 2rem 2rem;
+    & ul {
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      gap: 1.2em;
+    }
+  }
+
+  .dashboard__component {
+    & .current-hours {
+      font-size: 3.2rem;
+    }
+  }
+
+  .dashboard__activities-grid {
+    gap: 1.8rem;
+  }
+
+  .dashboard__component {
+    margin-top: 2.8rem;
+    margin-bottom: 0;
+
+    & header {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .dashboard__component:first-child,
+  .dashboard__component:last-child {
+    margin-top: 2.8rem;
+  }
+  .dashboard__component::before {
+    transform: translate(-1.519rem, -73px);
+  }
+
+  .attribution {
+    margin: 14rem 0 1rem;
+  }
 }
