@@ -157,7 +157,7 @@ body {
   content: "";
   z-index: -1;
   width: inherit;
-  transform: translate(-1.519rem, -68px);
+  transform: translate(-1.51rem, -68px);
   height: 80px;
   position: absolute;
   background-size: 75px;
@@ -211,6 +211,7 @@ body {
   text-align: center;
   font-size: 0.7rem;
   color: hsl(235, 45%, 61%);
+  margin: 1rem 0;
 
   & a {
     color: inherit;
