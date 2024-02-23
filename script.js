@@ -55,7 +55,7 @@ function createArticleElement(activity, timeframeObj, timeframe) {
     article.innerHTML = `
         <header class="flex">
             <h2 class="dashboard__activity-title">${activity.title}</h2>
-            <img class="ellipsis" src="images/icon-ellipsis.svg" alt="More options menu icon">
+            <svg class="ellipsis" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
         </header>
         <div class="flex times-tracked">
         <p class="current-hours">${timeframeObj.current}hrs</p>
