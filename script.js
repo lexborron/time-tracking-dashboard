@@ -50,18 +50,55 @@ function clearDashboard(dashboard) {
 function createArticleElement(activity, timeframeObj, timeframe) {
     const article = document.createElement('article');
     const timeLabel = getTimeLabel(timeframe);
-    article.classList.add("dashboard__component");
+
+    // create header element
+    const header = document.createElement('header');
+    header.classList.add('flex');
+
+    // create h2 element for activity title
+    const h2 = document.createElement('h2');
+    h2.classList.add('dashboard__activity-title');
+    h2.textContent = activity.title;
+
+    // create SVG element for ellipsis
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('ellipsis');
+    svg.setAttribute('width', '21');
+    svg.setAttribute('height', '5');
+
+    // create path element for SVG
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z');
+    path.setAttribute('fill-rule', 'evenodd');
+
+    // append path to SVG and SVG to header
+    svg.appendChild(path);
+    header.appendChild(h2);
+    header.appendChild(svg);
+
+    // create div element for times tracked
+    const timesTracked = document.createElement('div');
+    timesTracked.classList.add('flex', 'times-tracked');
+
+    // create p elements for current and previous hours
+    const currentHours = document.createElement('p');
+    currentHours.classList.add('current-hours');
+    currentHours.textContent = `${timeframeObj.current}hrs`;
+
+    const previousHours = document.createElement('p');
+    previousHours.textContent = `${timeLabel} - ${timeframeObj.previous}hrs`;
+
+    // append p elements to timesTracked div
+    timesTracked.appendChild(currentHours);
+    timesTracked.appendChild(previousHours);
+
+    // append header and timesTracked to article
+    article.appendChild(header);
+    article.appendChild(timesTracked);
+
+    // add classes to article
+    article.classList.add('dashboard__component');
     article.classList.add(`${activity.title.toLowerCase().split(' ').join('-')}`);
-    article.innerHTML = `
-        <header class="flex">
-            <h2 class="dashboard__activity-title">${activity.title}</h2>
-            <svg class="ellipsis" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
-        </header>
-        <div class="flex times-tracked">
-        <p class="current-hours">${timeframeObj.current}hrs</p>
-        <p>${timeLabel} - ${timeframeObj.previous}hrs</p>
-        </div>
-    `;
 
     return article;
 }
